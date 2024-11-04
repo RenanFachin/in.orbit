@@ -1,15 +1,18 @@
-interface SummaryProps {
-  summary:{
+interface GetSummaryResponse {
+  summary: {
     completed: number
     total: number
-    goalsPerDay: Record<string, {
-      id: string
-      title: string
-      completedAt: string
-    }>
+    goalsPerDay: Record<
+      string,
+      {
+        id: string
+        title: string
+        createdAt: string
+      }[]
+    >
   }
 }
 
 export type {
-  SummaryProps
+  GetSummaryResponse
 }

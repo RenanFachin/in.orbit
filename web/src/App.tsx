@@ -10,9 +10,12 @@ export function App() {
   const {data} = useQuery({
     // 2 propriedades obrigatórias:
     queryKey: ['getSummary'], // SEMPRE SERÁ UM ARRAY e É A IDENTIFICAÇÃO ÚNICA PARA A REQUISIÇÃO
-    queryFn: getSummary
+    queryFn: getSummary,
+    // CACHE INTERNO -> evitando chamadas desnecessárias
+    staleTime: 1000 * 60 // 60 segundos
   })
 
+  console.log('>>', data)
 
   return (
     <Dialog>
